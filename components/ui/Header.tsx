@@ -6,7 +6,7 @@ import { Colors } from '@/constants/theme';
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/images/HALODEK-Logo.png')} style={styles.logoImage} />
+      <Image source={require('../../assets/images/Halodek-Logo.png')} style={styles.logoImage} />
       <View style={styles.icons}>
         <Ionicons name="search" size={24} color={Colors.light.icon} style={styles.icon} />
         <Ionicons name="ellipsis-vertical" size={24} color={Colors.light.icon} />

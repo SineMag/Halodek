@@ -6,14 +6,14 @@ import ChatListItem from '@/components/ui/ChatListItem';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 
 const chatData = [
-  { id: '1', name: 'John Doe', message: 'Hey, how are you?', time: '3:45 PM', unreadCount: 2 },
-  { id: '2', name: 'Jane Smith', message: 'Can you send me the file?', time: '3:30 PM', unreadCount: 0 },
-  { id: '3', name: 'Bob Johnson', message: 'See you tomorrow!', time: '2:00 PM', unreadCount: 0 },
-  { id: '4', name: 'Alice Williams', message: 'Thanks!', time: '1:15 PM', unreadCount: 1 },
-  { id: '5', name: 'Mike Brown', message: 'Let\'s catch up later.', time: '12:00 PM', unreadCount: 0 },
-  { id: '6', name: 'Emily Davis', message: 'Sure, sounds good.', time: '11:45 AM', unreadCount: 0 },
-  { id: '7', name: 'Chris Wilson', message: 'On my way.', time: '11:30 AM', unreadCount: 0 },
-  { id: '8', name: 'Sarah Miller', message: 'Got it, thanks!', time: '11:00 AM', unreadCount: 3 },
+  { id: '1', name: 'Faza Dzikrulloh', message: 'Typing...', time: '14:30' },
+  { id: '2', name: 'Hatypo Studio', message: 'Faza Can you help me to do with new project...', time: '14:30', unreadCount: 2 },
+  { id: '3', name: 'Zhofran A', message: 'I think we should upgrade the social media...', time: '14:00', unreadCount: 2 },
+  { id: '4', name: 'Vito Arvy', message: 'Okay adhit, I\'ll tel faza about it 👍🏼 ', time: '13:40'},
+  { id: '5', name: 'Raul', message: 'Thanks Raul! 🙏🏼✨', time: 'Yesterday', unreadCount: 1 }, //no counts but double tick for sent and received
+  { id: '6', name: 'Farhan Bagas', message: 'Great work farhan! 👍🏼 I\'ll tell faza about logo...', time: '29/08/22', unreadCount: 0 }, //no counts but double tick for sent and received
+  { id: '7', name: 'Abdull', message: 'Perfecto!🔥 I will check it later', time: '29/08/22', unreadCount: 0 }, //no counts but double tick for sent and received
+  { id: '8', name: 'Ibe hatypo', message: 'nicely done bro! 🤙🏼', time: '29/08/22', unreadCount: 3 }, //no counts but double tick for sent and received
 ];
 
 export default function Home() {
@@ -32,9 +32,14 @@ export default function Home() {
             unreadCount={item.unreadCount}
           />
         )}
+        contentContainerStyle={styles.flatListContent}
+        ListFooterComponent={() => (
+          <>
+            <FloatingActionButton style={styles.floatingButton} />
+            <View style={styles.homeIndicator} />
+          </>
+        )}
       />
-      <FloatingActionButton />
-      <View style={styles.homeIndicator} />
     </View>
   );
 }
@@ -43,6 +48,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  flatListContent: {
+    paddingBottom: 80, // Adjust as needed to make space for the button and indicator
+  },
+  floatingButton: {
+    position: 'absolute',
+    bottom: 24, // Adjust this value to position the button correctly
+    right: 24,
   },
   homeIndicator: {
     position: 'absolute',
