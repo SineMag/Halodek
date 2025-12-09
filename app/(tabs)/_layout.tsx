@@ -6,7 +6,7 @@ export default function Layout() {
     <Stack>
       <Stack.Screen
         name="index"
-        options={{ title: "HALODEK", headerTitleStyle: styles.heading }}
+        options={{ headerShown: false }}
       />
     </Stack>
   );
@@ -14,7 +14,7 @@ export default function Layout() {
 
 const styles = StyleSheet.create({
   heading: {
-    color: "#E25D1F",
+    color: "#000",
     fontSize: 20,
     fontWeight: "bold",
   },
