@@ -61,6 +61,14 @@ const styles = StyleSheet.create({
   },
   activeTab: {
     backgroundColor: Colors.light.activeButton,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   tabText: {
     color: Colors.light.inactiveButtonText,

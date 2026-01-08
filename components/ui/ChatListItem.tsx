@@ -10,9 +10,10 @@ type Props = {
   unreadCount?: number;
   sent?: boolean;
   image: any; // Can be a remote URI or a local file resource.
+  isTyping?: boolean;
 };
 
-const ChatListItem = ({ name, message, time, unreadCount, sent, image }: Props) => {
+const ChatListItem = ({ name, message, time, unreadCount, sent, image, isTyping }: Props) => {
   return (
     <View style={styles.container}>
       <Image source={image} style={styles.avatar} />
@@ -22,7 +23,16 @@ const ChatListItem = ({ name, message, time, unreadCount, sent, image }: Props) 
           <Text style={styles.time}>{time}</Text>
         </View>
         <View style={styles.row}>
-          <Text style={styles.message} numberOfLines={1}>{message}</Text>
+          {name === 'Hatypo Studio' && message.startsWith('Faza') && !isTyping ? (
+            <Text style={styles.message} numberOfLines={1}>
+              <Text style={{ color: Colors.light.activeButton }}>Faza</Text>
+              {message.substring(4)}
+            </Text>
+          ) : (
+            <Text style={[styles.message, isTyping && styles.typingText]} numberOfLines={1}>
+              {message}
+            </Text>
+          )}
           {unreadCount && unreadCount > 0 ? (
             <View style={styles.unreadContainer}>
               <Text style={styles.unreadText}>{unreadCount}</Text>
@@ -72,6 +82,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Colors.light.icon,
     maxWidth: '90%',
+  },
+  typingText: {
+    color: Colors.light.activeButton,
   },
   unreadContainer: {
     backgroundColor: Colors.light.brand,

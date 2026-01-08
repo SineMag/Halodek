@@ -10,16 +10,16 @@ interface FloatingActionButtonProps {
 const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ style }) => {
   return (
     <TouchableOpacity style={[styles.container, style]}>
-      <Ionicons name="add" size={32} color="#fff" />
+      <Ionicons name="add" size={50} color="#fff" />
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
     backgroundColor: Colors.light.brand, // Pale orange shade
     justifyContent: 'center',
     alignItems: 'center',

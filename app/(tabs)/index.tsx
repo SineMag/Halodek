@@ -32,6 +32,7 @@ export default function Home() {
             unreadCount={item.unreadCount}
             sent={item.sent}
             image={item.image}
+            isTyping={item.message === 'Typing...'}
           />
         )}
         contentContainerStyle={styles.flatListContent}
@@ -56,8 +57,8 @@ const styles = StyleSheet.create({
   },
   floatingButton: {
     position: 'absolute',
-    bottom: 24, // Adjust this value to position the button correctly
-    right: 24,
+    bottom: 17, // Adjust this value to position the button correctly
+    right: 20,
   },
   homeIndicator: {
     position: 'absolute',
