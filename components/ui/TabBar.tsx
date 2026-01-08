@@ -12,26 +12,24 @@ const TabBar = () => {
   return (
     <View style={styles.card}>
       <View style={styles.container}>
-        {tabs.map((tab, index) => (
-          <React.Fragment key={tab}>
-            <TouchableOpacity
+        {tabs.map((tab) => (
+          <TouchableOpacity
+            key={tab}
+            style={[
+              styles.tab,
+              activeTab === tab && styles.activeTab,
+            ]}
+            onPress={() => setActiveTab(tab)}
+          >
+            <Text
               style={[
-                styles.tab,
-                activeTab === tab && styles.activeTab,
+                styles.tabText,
+                activeTab === tab && styles.activeTabText,
               ]}
-              onPress={() => setActiveTab(tab)}
             >
-              <Text
-                style={[
-                  styles.tabText,
-                  activeTab === tab && styles.activeTabText,
-                ]}
-              >
-                {tab}
-              </Text>
-            </TouchableOpacity>
-            {index < tabs.length - 1 && <View style={styles.separator} />}
-          </React.Fragment>
+              {tab}
+            </Text>
+          </TouchableOpacity>
         ))}
       </View>
     </View>
@@ -40,7 +38,7 @@ const TabBar = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.light.buttonCardBackground,
     borderRadius: 8,
     marginHorizontal: 16,
     marginVertical: 8,
@@ -49,32 +47,28 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 1,
-    overflow: 'hidden', // to clip the children
   },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
+    padding: 4,
   },
   tab: {
     flex: 1,
     paddingVertical: 12,
     alignItems: 'center',
+    borderRadius: 6,
   },
   activeTab: {
-    backgroundColor: Colors.light.brand,
+    backgroundColor: Colors.light.activeButton,
   },
   tabText: {
-    color: Colors.light.icon,
+    color: Colors.light.inactiveButtonText,
     fontSize: 16,
     fontWeight: '600',
   },
   activeTabText: {
-    color: '#fff',
-  },
-  separator: {
-    width: StyleSheet.hairlineWidth,
-    backgroundColor: '#ccc',
-    height: '60%',
+    color: Colors.light.activeButtonText,
   },
 });
 
