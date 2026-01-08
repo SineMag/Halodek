@@ -6,14 +6,14 @@ import ChatListItem from '@/components/ui/ChatListItem';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 
 const chatData = [
-  { id: '1', name: 'Faza Dzikrulloh', message: 'Typing...', time: '14:30' },
-  { id: '2', name: 'Hatypo Studio', message: 'Faza Can you help me to do with new project...', time: '14:30', unreadCount: 2 },
-  { id: '3', name: 'Zhofran A', message: 'I think we should upgrade the social media...', time: '14:00', unreadCount: 2 },
-  { id: '4', name: 'Vito Arvy', message: 'Okay adhit, I\'ll tel faza about it 👍🏼 ', time: '13:40'},
-  { id: '5', name: 'Raul', message: 'Thanks Raul! 🙏🏼✨', time: 'Yesterday', unreadCount: 1 }, //no counts but double tick for sent and received
-  { id: '6', name: 'Farhan Bagas', message: 'Great work farhan! 👍🏼 I\'ll tell faza about logo...', time: '29/08/22', unreadCount: 0 }, //no counts but double tick for sent and received
-  { id: '7', name: 'Abdull', message: 'Perfecto!🔥 I will check it later', time: '29/08/22', unreadCount: 0 }, //no counts but double tick for sent and received
-  { id: '8', name: 'Ibe hatypo', message: 'nicely done bro! 🤙🏼', time: '29/08/22', unreadCount: 3 }, //no counts but double tick for sent and received
+  { id: '1', name: 'Faza Dzikrulloh', message: 'Typing...', time: '14:30', image: require('@/assets/images/Faza Dzikrulloh.png') },
+  { id: '2', name: 'Hatypo Studio', message: 'Faza Can you help me to do with new project...', time: '14:30', unreadCount: 2, image: require('@/assets/images/Hatypo Studio.png') },
+  { id: '3', name: 'Zhofran A', message: 'I think we should upgrade the social media...', time: '14:00', unreadCount: 2, image: require('@/assets/images/Zhofran A.png') },
+  { id: '4', name: 'Vito Arvy', message: 'Okay adhit, I\'ll tel faza about it 👍🏼 ', time: '13:40', image: require('@/assets/images/Vito Arvy.png') },
+  { id: '5', name: 'Raul', message: 'Thanks Raul! 🙏🏼✨', time: 'Yesterday', sent: true, image: require('@/assets/images/Raul.png') },
+  { id: '6', name: 'Farhan Bagas', message: 'Great work farhan! 👍🏼 I\'ll tell faza about logo...', time: '29/08/22', sent: true, image: require('@/assets/images/Farhan Bagas.png') },
+  { id: '7', name: 'Abdull', message: 'Perfecto!🔥 I will check it later', time: '29/08/22', sent: true, image: require('@/assets/images/Abdull.png') },
+  { id: '8', name: 'Ibe hatypo', message: 'nicely done bro! 🤙🏼', time: '29/08/22', sent: true, image: require('@/assets/images/Ibe hatypo.png')  },
 ];
 
 export default function Home() {
@@ -30,6 +30,8 @@ export default function Home() {
             message={item.message}
             time={item.time}
             unreadCount={item.unreadCount}
+            sent={item.sent}
+            image={item.image}
           />
         )}
         contentContainerStyle={styles.flatListContent}

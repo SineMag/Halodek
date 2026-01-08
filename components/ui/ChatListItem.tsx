@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/theme';
 
 type Props = {
@@ -7,12 +8,14 @@ type Props = {
   message: string;
   time: string;
   unreadCount?: number;
+  sent?: boolean;
+  image: any; // Can be a remote URI or a local file resource.
 };
 
-const ChatListItem = ({ name, message, time, unreadCount }: Props) => {
+const ChatListItem = ({ name, message, time, unreadCount, sent, image }: Props) => {
   return (
     <View style={styles.container}>
-      <Image source={require('@/assets/images/Ellipse 1.png')} style={styles.avatar} />
+      <Image source={image} style={styles.avatar} />
       <View style={styles.content}>
         <View style={styles.row}>
           <Text style={styles.name}>{name}</Text>
@@ -20,10 +23,12 @@ const ChatListItem = ({ name, message, time, unreadCount }: Props) => {
         </View>
         <View style={styles.row}>
           <Text style={styles.message} numberOfLines={1}>{message}</Text>
-          {unreadCount && unreadCount > 0 && (
+          {unreadCount && unreadCount > 0 ? (
             <View style={styles.unreadContainer}>
               <Text style={styles.unreadText}>{unreadCount}</Text>
             </View>
+          ) : sent && (
+            <Ionicons name="checkmark-done" size={20} color={Colors.light.brand} />
           )}
         </View>
       </View>
@@ -85,3 +90,5 @@ const styles = StyleSheet.create({
 });
 
 export default ChatListItem;
+
+

@@ -1,11 +1,15 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '@/constants/theme';
 
-const FloatingActionButton = () => {
+interface FloatingActionButtonProps {
+  style?: StyleProp<ViewStyle>;
+}
+
+const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ style }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={[styles.container, style]}>
       <Ionicons name="add" size={32} color="#fff" />
     </TouchableOpacity>
   );
@@ -13,20 +17,17 @@ const FloatingActionButton = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    bottom: 100,
-    right: 30,
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: Colors.light.brand,
+    backgroundColor: Colors.light.brand, // Pale orange shade
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
+    elevation: 8, // Thicker shadow
+    shadowColor: Colors.light.brand,
+    shadowOffset: { width: 0, height: 6 }, // Thicker shadow
+    shadowOpacity: 0.5,
+    shadowRadius: 8, // Thicker shadow
   },
 });
 
