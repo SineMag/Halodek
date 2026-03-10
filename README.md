@@ -1,53 +1,62 @@
 <img src="https://socialify.git.ci/SineMag/Halodek/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="Halodek" width="640" height="320" />
 
-# Welcome to your Expo app 👋
+# Halodek
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An Expo + React Native app using Expo Router.
 
-## Get started
+## Project Structure
 
-1. Install dependencies
+```
+.
+├─ app/                # Expo Router routes and screens
+├─ assets/             # Images, fonts, and other static assets
+├─ components/         # Reusable UI components
+├─ constants/          # App-wide constants and theme tokens
+├─ hooks/              # Reusable React hooks
+├─ scripts/            # Project utility scripts (e.g. reset-project)
+├─ .expo/              # Local Expo state (generated)
+├─ app.json            # Expo app configuration
+├─ eas.json            # EAS build configuration
+├─ eslint.config.js    # Lint configuration
+├─ tsconfig.json       # TypeScript configuration
+├─ package.json        # Scripts and dependencies
+└─ package-lock.json   # Dependency lockfile
+```
+
+## Clone And Run
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/SineMag/Halodek.git
+   cd Halodek
+   ```
+
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Start the dev server
 
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+4. Run the app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - Android: `npm run android`
+   - iOS: `npm run ios`
+   - Web: `npm run web`
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+You can also run `npx expo start` directly and choose a target from the Expo CLI.
 
-## Get a fresh project
+## Scripts
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# Halodek
+- `npm start`: Start the Expo dev server.
+- `npm run android`: Start and open on Android emulator/device.
+- `npm run ios`: Start and open on iOS simulator.
+- `npm run web`: Start and open in the browser.
+- `npm run lint`: Run ESLint.
+- `npm run reset-project`: Move starter code to `app-example/` and create a blank `app/`.
