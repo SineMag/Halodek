@@ -6,14 +6,14 @@ import ChatListItem from '@/components/ui/ChatListItem';
 import FloatingActionButton from '@/components/ui/FloatingActionButton';
 
 const chatData = [
-  { id: '1', name: 'Faza Dzikrulloh', message: 'Typing...', time: '14:30', image: require('@/assets/images/Faza.png') },
+  { id: '1', name: 'Faza Dzikrulloh', message: 'Typing...', time: '14:30', image: require('@/assets/images/Faza.png'), avatarBg: '#B5D0DE' },
   { id: '2', name: 'Hatypo Studio', message: 'Faza Can you help me to do with new project...', time: '14:30', unreadCount: 2, image: require('@/assets/images/Hatypo Studio.png') },
-  { id: '3', name: 'Zhofran A', message: 'I think we should upgrade the social media...', time: '14:00', unreadCount: 2, image: require('@/assets/images/Zhofran.png') },
-  { id: '4', name: 'Vito Arvy', message: 'Okay adhit, I\'ll tel faza about it 👍🏼 ', time: '13:40', image: require('@/assets/images/Vito.png') },
-  { id: '5', name: 'Raul', message: 'Thanks Raul! 🙏🏼✨', time: 'Yesterday', sent: true, image: require('@/assets/images/Raul.png') },
-  { id: '6', name: 'Farhan Bagas', message: 'Great work farhan! 👍🏼 I\'ll tell faza about logo...', time: '29/08/22', sent: true, image: require('@/assets/images/Farhan.png') },
-  { id: '7', name: 'Abdull', message: 'Perfecto!🔥 I will check it later', time: '29/08/22', sent: true, image: require('@/assets/images/Abdull.png') },
-  { id: '8', name: 'Ibe hatypo', message: 'nicely done bro! 🤙🏼', time: '29/08/22', sent: true, image: require('@/assets/images/Ibe.png')  },
+  { id: '3', name: 'Zhofran A', message: 'I think we should upgrade the social media...', time: '14:00', unreadCount: 2, image: require('@/assets/images/Zhofran.png'), avatarBg: '#C8C0DE' },
+  { id: '4', name: 'Vito Arvy', message: 'Okay adhit, I\'ll tel faza about it 👍🏼 ', time: '13:40', image: require('@/assets/images/Vito.png'), avatarBg: '#F0C1CD' },
+  { id: '5', name: 'Raul', message: 'Thanks Raul! 🙏🏼✨', time: 'Yesterday', sent: true, image: require('@/assets/images/Raul.png'), avatarBg: '#F2D0A3' },
+  { id: '6', name: 'Farhan Bagas', message: 'Great work farhan! 👍🏼 I\'ll tell faza about logo...', time: '29/08/22', sent: true, image: require('@/assets/images/Farhan.png'), avatarBg: '#B0D1E3' },
+  { id: '7', name: 'Abdull', message: 'Perfecto!🔥 I will check it later', time: '29/08/22', sent: true, image: require('@/assets/images/Abdull.png'), avatarBg: '#B2D8BB' },
+  { id: '8', name: 'Ibe hatypo', message: 'nicely done bro! 🤙🏼', time: '29/08/22', sent: true, image: require('@/assets/images/Ibe.png'), avatarBg: '#E6D39C' },
 ];
 
 export default function Home() {
@@ -32,6 +32,7 @@ export default function Home() {
             unreadCount={item.unreadCount}
             sent={item.sent}
             image={item.image}
+            avatarBg={item.avatarBg}
             isTyping={item.message === 'Typing...'}
           />
         )}

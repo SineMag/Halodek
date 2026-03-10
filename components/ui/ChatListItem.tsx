@@ -10,13 +10,16 @@ type Props = {
   unreadCount?: number;
   sent?: boolean;
   image: any; // Can be a remote URI or a local file resource.
+  avatarBg?: string;
   isTyping?: boolean;
 };
 
-const ChatListItem = ({ name, message, time, unreadCount, sent, image, isTyping }: Props) => {
+const ChatListItem = ({ name, message, time, unreadCount, sent, image, avatarBg, isTyping }: Props) => {
   return (
     <View style={styles.container}>
-      <Image source={image} style={styles.avatar} />
+      <View style={[styles.avatarWrap, avatarBg ? { backgroundColor: avatarBg } : null]}>
+        <Image source={image} style={styles.avatar} />
+      </View>
       <View style={styles.content}>
         <View style={styles.row}>
           <Text style={styles.name}>{name}</Text>
@@ -55,11 +58,19 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: '#ccc',
   },
-  avatar: {
+  avatarWrap: {
     width: 60,
     height: 60,
     borderRadius: 30,
     marginRight: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  avatar: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
   },
   content: {
     flex: 1,
