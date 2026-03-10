@@ -60,3 +60,5 @@ You can also run `npx expo start` directly and choose a target from the Expo CLI
 - `npm run web`: Start and open in the browser.
 - `npm run lint`: Run ESLint.
 - `npm run reset-project`: Move starter code to `app-example/` and create a blank `app/`.
+
+<img src="assets/images/Halodek - Chat Mobile App by Adhitya Putra for Hatypo Studio on Dribbble.png" alt="Halodek app screenshot" width="640" />
