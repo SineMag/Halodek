@@ -11,14 +11,21 @@ type Props = {
   sent?: boolean;
   image: any; // Can be a remote URI or a local file resource.
   avatarBg?: string;
+  avatarSize?: number;
   isTyping?: boolean;
 };
 
-const ChatListItem = ({ name, message, time, unreadCount, sent, image, avatarBg, isTyping }: Props) => {
+const ChatListItem = ({ name, message, time, unreadCount, sent, image, avatarBg, avatarSize, isTyping }: Props) => {
   return (
     <View style={styles.container}>
       <View style={[styles.avatarWrap, avatarBg ? { backgroundColor: avatarBg } : null]}>
-        <Image source={image} style={styles.avatar} />
+        <Image
+          source={image}
+          style={[
+            styles.avatar,
+            avatarSize ? { width: avatarSize, height: avatarSize, borderRadius: avatarSize / 2 } : null,
+          ]}
+        />
       </View>
       <View style={styles.content}>
         <View style={styles.row}>

@@ -12,8 +12,6 @@ An Expo + React Native app using Expo Router.
 ├─ assets/             # Images, fonts, and other static assets
 ├─ components/         # Reusable UI components
 ├─ constants/          # App-wide constants and theme tokens
-├─ hooks/              # Reusable React hooks
-├─ scripts/            # Project utility scripts (e.g. reset-project)
 ├─ .expo/              # Local Expo state (generated)
 ├─ app.json            # Expo app configuration
 ├─ eas.json            # EAS build configuration
@@ -59,6 +57,5 @@ You can also run `npx expo start` directly and choose a target from the Expo CLI
 - `npm run ios`: Start and open on iOS simulator.
 - `npm run web`: Start and open in the browser.
 - `npm run lint`: Run ESLint.
-- `npm run reset-project`: Move starter code to `app-example/` and create a blank `app/`.
 
 <img src="assets/images/Halodek - Chat Mobile App by Adhitya Putra for Hatypo Studio on Dribbble.png" alt="Halodek app screenshot" width="640" />
